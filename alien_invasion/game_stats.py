@@ -22,7 +22,10 @@ class GameStats(object):
         self.reset_stats()
 
         # 游戏刚启动时处于活动状态
-        self.game_active = True
+        self.game_active = False
+
+        # 最高得分, 任何情况下都不应重置最高得分
+        self.high_score = 0
 
     def reset_stats(self, ):
         """
@@ -30,3 +33,5 @@ class GameStats(object):
         """
 
         self.ships_left = self.ai_settings.ship_limit
+        self.score = 0 # 得分
+        self.level = 1 # 等级
