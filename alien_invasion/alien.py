@@ -16,14 +16,16 @@ class Alien(Sprite):
     表示单个外星人的类
     """
 
-    def __init__(self, ai_settings, screen):
-        """
-        初始化外星人并设置初始位置
-        """
+    def __init__(self, ai_game):
+        '''
+        ### Docs: 初始化外星人并设置初始位置
+        ### Args:
+            - ai_game: class, AlienInvasion类的实例对象
+        '''
 
         super(Alien, self).__init__()
-        self.screen = screen
-        self.ai_settings = ai_settings
+        self.screen = ai_game.screen
+        self.settings = ai_game.settings
 
         # 加载外星人, 并设置rect属性
         self.image = pygame.image.load('images/alien.bmp')
@@ -47,7 +49,7 @@ class Alien(Sprite):
         """
         根据方向移动外星人
         """
-        self.x += self.ai_settings.alien_speed_factor * self.ai_settings.fleet_direction
+        self.x += self.settings.alien_speed_factor * self.settings.fleet_direction
         self.rect.x = self.x
 
     def blitme(self, ):

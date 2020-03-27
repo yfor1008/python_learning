@@ -13,12 +13,14 @@ class GameStats(object):
     游戏统计信息
     """
 
-    def __init__(self, ai_settings):
-        """
-        初始化统计信息
-        """
+    def __init__(self, ai_game):
+        '''
+        ### Docs: 初始化统计信息
+        ### Args:
+            - ai_game: class, AlienInvasion类的实例对象
+        '''
 
-        self.ai_settings = ai_settings
+        self.settings = ai_game.settings
         self.reset_stats()
 
         # 游戏刚启动时处于活动状态
@@ -32,6 +34,6 @@ class GameStats(object):
         初始化在游戏期间可能变化的统计信息
         """
 
-        self.ships_left = self.ai_settings.ship_limit
+        self.ships_left = self.settings.ship_limit
         self.score = 0 # 得分
         self.level = 1 # 等级

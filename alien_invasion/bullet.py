@@ -16,21 +16,24 @@ class Bullet(Sprite):
     飞船发射子弹管理的类
     """
 
-    def __init__(self, ai_settings, screen, ship):
-        """
-        在飞船所处位置创建一个子弹对象实例
-        """
+    def __init__(self, ai_game):
+        '''
+        ### Docs: 在飞船所处位置创建一个子弹对象实例
+        ### Args:
+            - ai_game: class, AlienInvasion类的实例对象
+        '''
 
         super(Bullet, self).__init__()
-        self.screen = screen
+        self.screen = ai_game.screen
+        self.settings = ai_game.settings
 
         # 设置子弹位置, 飞船正上方
-        self.rect = pygame.Rect(0, 0, ai_settings.bullet_width, ai_settings.bullet_height)
-        self.rect.centerx = ship.rect.centerx
-        self.rect.top = ship.rect.top
+        self.rect = pygame.Rect(0, 0, self.settings.bullet_width, self.settings.bullet_height)
+        self.rect.centerx = ai_game.ship.rect.centerx
+        self.rect.top = ai_game.ship.rect.top
         self.y = float(self.rect.y) # 用浮点数存储子弹位置
-        self.color = ai_settings.bullet_color
-        self.speed_factor = ai_settings.bullet_speed_factor
+        self.color = self.settings.bullet_color
+        self.speed_factor = self.settings.bullet_speed_factor
 
     def update(self, ):
         """

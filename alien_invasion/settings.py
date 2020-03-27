@@ -36,7 +36,7 @@ class Settings(object):
         self.alien_drop_speed = 20
 
         # 提高游戏速度
-        self.speed_scale = 1.
+        self.speed_scale = 1.1
         # 提高外星人得分点数
         self.score_scale = 1.5
 

@@ -13,13 +13,15 @@ import pygame.font
 class Button(object):
     """按钮类"""
 
-    def __init__(self, ai_settings, screen, msg):
-        """
-        初始化按钮属性
-        """
+    def __init__(self, ai_game, msg):
+        '''
+        ### Docs: 初始化按钮属性
+        ### Args:
+            - ai_game: class, AlienInvasion类的实例对象
+        '''
 
-        self.screen = screen
-        self.screen_rect = screen.get_rect()
+        self.screen = ai_game.screen
+        self.screen_rect = ai_game.screen.get_rect()
 
         # 设置按钮的尺寸和其它属性
         self.width, self.height = 200, 50
