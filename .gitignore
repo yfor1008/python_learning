@@ -1,0 +1,6 @@
+﻿*/__pycache__
+*/.vscode
+*/ll_env
+*/*/__pycache__
+*/*/*/__pycache__
+*/*.svg
